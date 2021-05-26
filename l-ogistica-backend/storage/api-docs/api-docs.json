@@ -1,0 +1,100 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "L5 Swagger API",
+        "description": "L5 Swagger API description",
+        "contact": {
+            "email": "your-email@domain.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/entregas/": {
+            "get": {
+                "tags": [
+                    "Entrega"
+                ],
+                "summary": "Returns a list of courses",
+                "description": "Returns a object of courses",
+                "operationId": "App\\Http\\Controllers\\Api\\EntregaController::index",
+                "responses": {
+                    "200": {
+                        "description": "A list with courses"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Entrega"
+                ],
+                "summary": "Cadastro de Rotas de entregas",
+                "description": "Create",
+                "operationId": "App\\Http\\Controllers\\Api\\EntregaController::store",
+                "requestBody": {
+                    "description": "Create rota de entrega",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "cliente": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "Carlos Cardoso de Carvalho"
+                                    },
+                                    "dta_entrega": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "2021-04-23"
+                                    },
+                                    "end_destino": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "Av Santa Cruz, 12.566 Qd 8 Lt 56 casa 02"
+                                    },
+                                    "end_origem": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "Rua alguma rua da Pavuna, s/n"
+                                    },
+                                    "lat_origem": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "-27.999001"
+                                    },
+                                    "lng_origem": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "-17.999002"
+                                    },
+                                    "lat_destino": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "-47.999003"
+                                    },
+                                    "lng_destino": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "-07.999004"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "500": {
+                        "description": "Erro interno do Servidor!"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
